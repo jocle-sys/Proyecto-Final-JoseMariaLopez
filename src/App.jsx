@@ -1,18 +1,21 @@
+import { Navigate } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
+
 import Productos from './pages/Productos';
 import DetalleProducto from './pages/DetalleProducto';
 import Carrito from './pages/Carrito';
 import Footer from './components/Footer';
 
-const App = () => {
-  const [carrito, setCarrito] = useState([]);
+import RutaPrivada from './components/RutaPrivada';
+import AdminProductos from './pages/AdminProductos';
+import { ToastContainer } from 'react-toastify';
 
-  const agregarAlCarrito = (producto) => {
-    setCarrito([...carrito, producto]);
-  };
+// ✅ FALTA ESTA IMPORTACIÓN
+import { useCarrito } from "./context/CarritoContext";
+
+const App = () => {
+  const { carrito } = useCarrito(); 
 
   return (
     <div className="d-flex flex-column min-vh-100">
@@ -20,15 +23,28 @@ const App = () => {
 
       <div className="flex-grow-1">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/productos"element={<Productos agregarAlCarrito={agregarAlCarrito} />}/>
+        
+          <Route path="/productos" element={<Productos />} />
           <Route path="/producto/:id" element={<DetalleProducto />} />
-          <Route path="/carrito" element={<Carrito carrito={carrito} setCarrito={setCarrito} />}
+          <Route path="/" element={<Navigate to="/productos" />} />
+
+         
+          <Route path="/carrito" element={<Carrito />} />
+
+         
+          <Route
+            path="/admin"
+            element={
+              <RutaPrivada soloAdmin>
+                <AdminProductos />
+              </RutaPrivada>
+            }
           />
         </Routes>
       </div>
 
       <Footer />
+      <ToastContainer position="top-right" autoClose={2000} />
     </div>
   );
 };

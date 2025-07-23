@@ -55,4 +55,4 @@ Implementar pasarela de pago real (Stripe, MercadoPago)
 
 Agregar filtros y búsqueda avanzada de productos
 
-Mejorar el panel Admin para incluir creación y eliminación de productos
+Mejorar el panel Admin para incluir creación de productos

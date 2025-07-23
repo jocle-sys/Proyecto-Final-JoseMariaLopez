@@ -1,42 +1,132 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar .navbar-brand {
+  color: #333 !important;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.navbar .navbar-brand:hover {
+  color: #007bff !important;
 }
+
+
+.navbar .nav-link {
+  display: none;
+}
+
 
 .card {
-  padding: 2em;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  color: #333;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
 }
 
-.read-the-docs {
-  color: #888;
+.card img {
+  max-height: 200px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border: 1px solid #007bff;
+  box-shadow: 0px 6px 20px rgba(0, 123, 255, 0.15);
+}
+
+
+.card .card-text.text-success {
+  color: #28a745 !important;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+
+.btn-primary {
+  background: #007bff;
+  border: none;
+  font-weight: 600;
+}
+.btn-primary:hover {
+  background: #006ae0;
+}
+
+.btn-light {
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #ddd;
+}
+.btn-light:hover {
+  background-color: #eaeaea;
+}
+
+
+.modal-content {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+}
+.modal-header, .modal-footer {
+  border-color: #eee;
+}
+
+
+h1, h2 {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #222;
+}
+
+
+.btn {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.product-card img {
+  max-height: 200px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 6px 16px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+.product-card {
+  transition: 0.3s ease;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  background: #fff;
+  border-radius: 8px;
 }
